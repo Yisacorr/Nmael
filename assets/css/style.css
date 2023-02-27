@@ -94,7 +94,28 @@
 
 
 
+.typewriter h2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid var(--carolina-blue); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
 
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
 
 /*-----------------------------------*\
   #RESET
@@ -403,9 +424,6 @@ button, a { transition: var(--transition); }
 }
 
 
-
-
-
 /*-----------------------------------*\
   #FEATURED CAR
 \*-----------------------------------*/
@@ -436,7 +454,9 @@ button, a { transition: var(--transition); }
   transition: var(--transition);
 }
 
-.featured-car-link:is(:hover, :focus) ion-icon { color: var(--carolina-blue); }
+.featured-car-link:is(:hover, :focus) ion-icon {
+   color: var(--carolina-blue); 
+  }
 
 .featured-car-list {
   display: grid;
@@ -464,100 +484,138 @@ button, a { transition: var(--transition); }
   object-fit: cover;
 }
 
-.featured-car-card .card-content { padding: 20px 10px 10px; }
+.featured-car-card .card-content { 
+  padding: 20px 10px 10px; 
+}
 
 .featured-car-card .card-title-wrapper {
-  display: flex;
+
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
   margin-bottom: 15px;
+  display: flex; 
+  gap: 5px;  
+
 }
 
-.featured-car-card .card-title { width: calc(100% - 60px); }
+.featured-car-card .card-title { 
+  width: calc(100% - 60px); 
+}
 
 .featured-car-card .card-title > a {
-  color: inherit;
-  width: 100%;
+
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  color: inherit;
+  width: 100%;
+
 }
 
-.featured-car-card .card-title > a:is(:hover, :focus) { color: var(--carolina-blue); }
+.featured-car-card .card-title > a:is(:hover, :focus) { 
+
+  color: var(--carolina-blue); 
+
+}
 
 .featured-car-card .year {
+
   font-family: var(--ff-nunito);
   font-size: var(--fs-6);
   font-weight: var(--fw-600);
   padding: 3px 12px;
   border: 2px dashed hsla(204, 91%, 53%, 0.4);
   border-radius: var(--radius-14);
+
 }
 
 .featured-car-card .card-list {
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
   margin-bottom: 15px;
+
 }
 
 .featured-car-card .card-list-item {
+
   display: flex;
   align-items: center;
   gap: 8px;
+
 }
 
 .featured-car-card .card-list-item ion-icon {
+
   font-size: 20px;
   color: var(--carolina-blue);
   --ionicon-stroke-width: 38px;
+
 }
 
 .featured-car-card .card-item-text {
+
   color: var(--independence);
   font-size: var(--fs-6);
+
 }
 
 .featured-car-card .card-price-wrapper {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+
 }
 
 .featured-car-card .card-price {
+
   font-family: var(--ff-nunito);
   font-size: var(--fs-6);
   color: var(--space-cadet);
+
 }
 
 .featured-car-card .card-price strong {
+
   font-size: var(--fs-3);
   font-weight: var(--fw-400);
+
 }
 
 .featured-car-card .btn:last-child {
+
   --height: 36px;
   min-width: 100%;
+
 }
 
 .featured-car-card .fav-btn {
+
   --background: var(--beau-blue);
   --color: var(--blue-jeans);
+  --shadow-2: none;
   --height: 36px;
   --width: 36px;
-  --shadow-2: none;
+
 }
 
-.featured-car-card .fav-btn ion-icon { font-size: 18px; }
+.featured-car-card .fav-btn ion-icon { 
+
+  font-size: 18px; 
+
+}
 
 .featured-car-card .fav-btn:is(:hover, :focus) {
+
   --background: var(--lavender-blush);
   --color: var(--red-salsa);
+
 }
 
 
@@ -568,27 +626,38 @@ button, a { transition: var(--transition); }
   #GET START
 \*-----------------------------------*/
 
-.get-start .section-title { margin-bottom: 25px; }
+.get-start .section-title { 
+
+  margin-bottom: 25px; 
+
+}
 
 .get-start-list {
+
   display: grid;
   gap: 20px;
+
 }
 
 .get-start-card {
+
   background: var(--white);
   padding: 20px;
   border-radius: var(--radius-18);
   border: 1px solid var(--white);
   transition: var(--transition);
+
 }
 
 .get-start-card:hover {
+
   background: var(--alice-blue-2);
   box-shadow: var(--shadow-1);
+
 }
 
 .get-start-card .card-icon {
+
   background: var(--icon-card-bg, var(--columnia-blue));
   color: var(--icon-card-color, var(--carolina-blue));
   height: 50px;
@@ -597,49 +666,69 @@ button, a { transition: var(--transition); }
   place-items: center;
   border-radius: var(--radius-14);
   margin-bottom: 20px;
+
 }
 
 .get-start-card .card-icon ion-icon {
+
   font-size: 26px;
   --ionicon-stroke-width: 45px;
+
 }
 
 .get-start-card .icon-1 {
+
   --icon-card-bg: var(--mimi-pink);
   --icon-card-color: var(--deep-cerise);
+
 }
 
 .get-start-card .icon-2 {
+
   --icon-card-bg: var(--columbia-blue);
   --icon-card-color: var(--carolina-blue);
+
 }
 
 .get-start-card .icon-3 {
+
   --icon-card-bg: var(--honey-dew);
   --icon-card-color: var(--medium-sea-green);
+
 }
 
 .get-start-card .icon-4 {
+
   --icon-card-bg: var(--pale-purple-pantone);
   --icon-card-color: var(--slate-blue);
+
 }
 
 .get-start-card .card-title {
+
   color: var(--space-cadet);
   font-family: var(--ff-nunito);
   font-weight: var(--fw-400);
   margin-bottom: 15px;
+
 }
 
-.get-start-card .card-text { color: var(--independence); }
+.get-start-card .card-text { 
+
+  color: var(--independence); 
+
+}
 
 .get-start-card .card-link {
+
   position: relative;
   color: var(--carolina-blue);
   width: max-content;
+
 }
 
 .get-start-card .card-link::before {
+
   content: "";
   position: absolute;
   bottom: 0;
@@ -648,26 +737,34 @@ button, a { transition: var(--transition); }
   height: 2px;
   background: var(--carolina-blue);
   transition: var(--transition);
+
 }
 
-.get-start-card .card-link:is(:hover, :focus)::before { width: 100%; }
+.get-start-card .card-link:is(:hover, :focus)::before { 
 
+  width: 100%; 
 
-
+}
 
 
 /*-----------------------------------*\
-  #BLOG
+|                #BLOG                |                           
 \*-----------------------------------*/
 
-.blog .section-title { margin-bottom: 30px; }
+.blog .section-title { 
+
+  margin-bottom: 30px;    
+
+}
 
 .blog-card {
+
   background: var(--alice-blue-2);
   border-radius: var(--radius-18);
   border: 1px solid var(--white);
   box-shadow: var(--shadow-1);
   overflow: hidden;
+
 }
 
 .blog-card .card-banner {

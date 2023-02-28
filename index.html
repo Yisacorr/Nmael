@@ -705,11 +705,12 @@
           </li> -->
 
           <li>
-            <a href="#" class="footer-link">Privacy policy</a>
+            <a href="#" onclick="openPopup()" class="footer-link">Privacy policy</a>
+            <!-- <a href="#" class="footer-link">Privacy policy</a> -->
           </li>
 
           <li>
-            <a href="#" class="footer-link">Terms & conditions</a>
+            <a href="#" onclick="openPopuptc()" class="footer-link">Terms & conditions</a>
           </li>
 
         </ul>
@@ -742,7 +743,7 @@
           </li>
 
           <li>
-            <a href="#" class="social-link">
+            <a href="https://instagram.com/natan_yem?igshid=YmMyMTA2M2Y=" target="_blank" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -770,8 +771,134 @@
     </div>
   </footer>
 
+  <style>
+      /* Pop-up box styling */
+      #popup {
+        display: none;
+        position: fixed;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        padding: 20px;
+        border: 1px solid rgb(63, 6, 6);
+        border-radius: 5%;
+        background-color: white;
+        box-shadow: 0 0 10px rgb(63, 6, 6);
+        max-width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      #popuptc {
+        display: none;
+        position: fixed;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        padding: 20px;
+        border: 1px solid rgb(63, 6, 6);
+        border-radius: 5%;
+        background-color: white;
+        box-shadow: 0 0 10px rgb(63, 6, 6);
+        max-width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+  
+      /* Close button styling */
+      #close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+      }
+  </style>
+  <body>
+    <!-- Privacy policy pop-up box -->
+    <div id="popup">
+      <h2>Privacy Policy</h2>
+      <p>We at Nmael Car Dealership take your privacy seriously and are committed to protecting your personal information. We collect and use your data only for the purposes stated in this policy and in compliance with relevant laws and regulations.</p>
+      <br>
+      <p>We collect your personal information, such as name, address, email address, phone number, and vehicle preferences, to provide you with better service, to contact you with promotional offers, and to improve our products and services. We may also share your information with third-party service providers who assist us in our business operations.</p>
+      <br>
+      <p>By providing us with your personal information, you consent to its collection, use, and sharing as outlined in this policy. You have the right to access and update your personal information and to opt-out of receiving marketing communications from us.</p>
+      <br>
+      <p>If you have any questions or concerns about our privacy policy, please contact us at privacy@nmael.com</p>
+      <span id="close-btn" onclick="closePopup()">X</span>
+    </div>
+
+    <div id="popuptc">
+      <h2>TERMS AND CONDITIONS</h2>
+      <p>Welcome to nmael.com, operated by NMAEL. These terms and conditions Agreement govern your use of the website and services offered by us. By using our website and services, you agree to be bound by this Agreement. If you do not agree with any part of this Agreement, you must not use our website or services.</p>
+      <br>
+      <p>Use of the Website and Services
+        Our website and services are intended for individuals who are 18 years of age or older.
+         By using our website and services, you represent and warrant that you are at least 18 years old.</p>
+      <br>
+      <p>Pricing and Payment
+        Prices listed on our website are subject to change without notice. 
+        We reserve the right to refuse any order or purchase for any reason.</p>
+      <br>
+      <p>Product Availability
+        All vehicles listed on our website are subject to availability. We make every effort to ensure that the vehicles listed on our website are available, 
+        but we do not guarantee that the vehicles will be available for purchase.</p>
+        <br>
+      <p>Warranties and Disclaimers
+        All vehicles listed on our website are sold as-is, with no warranty or guarantee. We make no representations or warranties of any kind, express or implied, 
+        with respect to the website, services, or vehicles listed on our website.</p>
+        <br>
+     <p>Limitation of Liability
+      In no event shall NMAEL be liable for any direct, indirect, incidental,
+       special, or consequential damages arising out of or in connection with your 
+       use of our website or services.</p>
+       <br>
+      <p>Termination
+        We may terminate this Agreement and your access to our website and services at any time and
+         for any reason, without notice or liability.</p>
+         <br>
+      <p>Changes to this Agreement
+        We reserve the right to modify this Agreement at any time without prior notice. Your continued use of our website and services after any changes to this 
+        Agreement will constitute your acceptance of such changes.</p>
+        <br>
+      <p>If you have any questions or concerns regarding these terms and
+         conditions, please contact us at privacy@nmael.com.</p>
+      <span id="close-btn" onclick="closePopuptc()">X</span>
+    </div>
 
 
+  
+    <!-- Privacy policy link to open the pop-up box -->
+    <a href="#" onclick="openPopup()">Privacy Policy</a>
+  
+    <script>
+      // Functions to open and close the pop-up box
+      function openPopup() {
+        document.getElementById("popup").style.display = "block";
+      }
+      function openPopuptc() {
+        document.getElementById("popuptc").style.display = "block";
+      }
+      function closePopuptc() {
+        document.getElementById("popuptc").style.display = "none";
+      }
+
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+  
 
 
   <!-- 

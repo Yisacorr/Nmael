@@ -791,6 +791,8 @@
         font-size: 16px;
         line-height: 1.5;
         text-align: justify;
+
+
       }
 
       #popuptc {
@@ -823,78 +825,106 @@
         font-weight: bold;
         color: black;
       }
+      
+      /* Add styles for the overlay */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1;
+      }
+      /* Add styles for the content of the popup */
+      .popup-content {
+        max-height: 80vh;
+        overflow-y: auto;
+      }
   </style>
   <body>
     <!-- Privacy policy pop-up box -->
-    <div id="popup">
-      <h2>Privacy Policy</h2>
-      <p>We at Nmael Car Dealership take your privacy seriously and are committed to protecting your personal information. We collect and use your data only for the purposes stated in this policy and in compliance with relevant laws and regulations.</p>
-      <br>
-      <p>We collect your personal information, such as name, address, email address, phone number, and vehicle preferences, to provide you with better service, to contact you with promotional offers, and to improve our products and services. We may also share your information with third-party service providers who assist us in our business operations.</p>
-      <br>
-      <p>By providing us with your personal information, you consent to its collection, use, and sharing as outlined in this policy. You have the right to access and update your personal information and to opt-out of receiving marketing communications from us.</p>
-      <br>
-      <p>If you have any questions or concerns about our privacy policy, please contact us at privacy@nmael.com</p>
-      <span id="close-btn" onclick="closePopup()">X</span>
+    <div id="popup" class="popup">
+      
+      <div class="popup-content">
+        <h2>Privacy Policy</h2>
+        <p>We at Nmael Car Dealership take your privacy seriously and are committed to protecting your personal information. We collect and use your data only for the purposes stated in this policy and in compliance with relevant laws and regulations.</p>
+        <br>
+        <p>We collect your personal information, such as name, address, email address, phone number, and vehicle preferences, to provide you with better service, to contact you with promotional offers, and to improve our products and services. We may also share your information with third-party service providers who assist us in our business operations.</p>
+        <br>
+        <p>By providing us with your personal information, you consent to its collection, use, and sharing as outlined in this policy. You have the right to access and update your personal information and to opt-out of receiving marketing communications from us.</p>
+        <br>
+        <p>If you have any questions or concerns about our privacy policy, please contact us at privacy@nmael.com</p>
+        <span id="close-btn" onclick="closePopup()">&times;</span>
+      </div>
     </div>
+    <div id="overlay" class="overlay"></div>
 
-    <div id="popuptc">
-      <h2>TERMS AND CONDITIONS</h2>
-      <p>Welcome to nmael.com, operated by NMAEL. These terms and conditions Agreement govern your use of the website and services offered by us. By using our website and services, you agree to be bound by this Agreement. If you do not agree with any part of this Agreement, you must not use our website or services.</p>
-      <br>
-      <p>Use of the Website and Services
-        Our website and services are intended for individuals who are 18 years of age or older.
-         By using our website and services, you represent and warrant that you are at least 18 years old.</p>
-      <br>
-      <p>Pricing and Payment
-        Prices listed on our website are subject to change without notice. 
-        We reserve the right to refuse any order or purchase for any reason.</p>
-      <br>
-      <p>Product Availability
-        All vehicles listed on our website are subject to availability. We make every effort to ensure that the vehicles listed on our website are available, 
-        but we do not guarantee that the vehicles will be available for purchase.</p>
+    <div id="popuptc" class="popuptc">
+      <!-- <span class="#close-btn" onclick="closePopuptc()">&times;</span> -->
+      <div class="popup-content">
+        <h2><strong>TERMS AND CONDITIONS</strong></h2>
+        <p>Welcome to nmael.com, operated by NMAEL. These terms and conditions Agreement govern your use of the website and services offered by us. By using our website and services, you agree to be bound by this Agreement. If you do not agree with any part of this Agreement, you must not use our website or services.</p>
         <br>
-      <p>Warranties and Disclaimers
-        All vehicles listed on our website are sold as-is, with no warranty or guarantee. We make no representations or warranties of any kind, express or implied, 
-        with respect to the website, services, or vehicles listed on our website.</p>
+        <p><strong>Use of the Website and Services</strong><br>
+          Our website and services are intended for individuals who are 18 years of age or older.
+          By using our website and services, you represent and warrant that you are at least 18 years old.</p>
         <br>
-     <p>Limitation of Liability
-      In no event shall NMAEL be liable for any direct, indirect, incidental,
-       special, or consequential damages arising out of or in connection with your 
-       use of our website or services.</p>
-       <br>
-      <p>Termination
-        We may terminate this Agreement and your access to our website and services at any time and
-         for any reason, without notice or liability.</p>
-         <br>
-      <p>Changes to this Agreement
-        We reserve the right to modify this Agreement at any time without prior notice. Your continued use of our website and services after any changes to this 
-        Agreement will constitute your acceptance of such changes.</p>
+        <p><strong>Pricing and Payment</strong><br>
+          Prices listed on our website are subject to change without notice. 
+          We reserve the right to refuse any order or purchase for any reason.</p>
         <br>
-      <p>If you have any questions or concerns regarding these terms and
-         conditions, please contact us at privacy@nmael.com.</p>
-      <span id="close-btn" onclick="closePopuptc()">X</span>
+        <p><strong>Product Availability</strong><br>
+          All vehicles listed on our website are subject to availability. We make every effort to ensure that the vehicles listed on our website are available, 
+          but we do not guarantee that the vehicles will be available for purchase.</p>
+          <br>
+        <p><strong>Warranties and Disclaimers</strong><br>
+          All vehicles listed on our website are sold as-is, with no warranty or guarantee. We make no representations or warranties of any kind, express or implied, 
+          with respect to the website, services, or vehicles listed on our website.</p>
+          <br>
+      <p><strong>Limitation of Liability</strong><br>
+        In no event shall NMAEL be liable for any direct, indirect, incidental,
+        special, or consequential damages arising out of or in connection with your 
+        use of our website or services.</p>
+        <br>
+        <p><strong>Termination</strong><br>
+          We may terminate this Agreement and your access to our website and services at any time and
+          for any reason, without notice or liability.</p>
+          <br>
+        <p><strong> Changes to this Agreement</strong><br>
+          We reserve the right to modify this Agreement at any time without prior notice. Your continued use of our website and services after any changes to this 
+          Agreement will constitute your acceptance of such changes.</p>
+          <br>
+        <p>If you have any questions or concerns regarding these terms and
+          conditions, please contact us at privacy@nmael.com.</p>
+        <span id="close-btn" onclick="closePopuptc()">&times;</span>
+      </div>
     </div>
+    <div id="overlay" class="overlay"></div>
 
 
   
     <!-- Privacy policy link to open the pop-up box -->
-    <a href="#" onclick="openPopup()">Privacy Policy</a>
+    
   
     <script>
       // Functions to open and close the pop-up box
       function openPopup() {
         document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
       }
       function openPopuptc() {
         document.getElementById("popuptc").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
       }
       function closePopuptc() {
         document.getElementById("popuptc").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
       }
 
       function closePopup() {
         document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
       }
     </script>
   </body>

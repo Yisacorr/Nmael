@@ -374,7 +374,6 @@ button, a { transition: var(--transition); }
 .hero { padding-top: 120px; }
 
 .hero-title {
-  max-width: 20ch;
   margin-bottom: 15px;
 }
 
@@ -937,6 +936,14 @@ button, a { transition: var(--transition); }
  * responsive for large than 350px screen
  */
 
+ @media (max-width: 1000px) {
+
+ .hero-title {
+  font-size:medium;
+  color: black;
+}
+}
+a { color: inherit; } 
 @media (min-width: 350px) {
 
   /**
